@@ -1,0 +1,38 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin",
+            "email": "admin@example.com",
+            "password": "admin",
+            "role": "admin",
+            "created_at": "2024-01-01T00:00:00"
+        },
+        {
+            "id": 2,
+            "username": "user",
+            "email": "user@example.com",
+            "password": "user",
+            "role": "user",
+            "created_at": "2024-01-01T00:00:00"
+        },
+        {
+            "id": 3,
+            "name": "Владислав Шорин",
+            "email": "mrwormik@gmail.com",
+            "phone": "+7 (950) 912-58-14",
+            "password": "scrypt:32768:8:1$v42mtEnhlUHpAZ6S$6eaa26f1ef64571c1d36a30a24160e2bd0477142dce9e21e941ed3a55fb40048ac925fdd1783b0299f6cfbd26a68f475c7466626ae910d0010db984cf56ada83",
+            "role": "user",
+            "created_at": "2025-06-03 16:24:24"
+        },
+        {
+            "id": 4,
+            "name": "312312",
+            "email": "321@gmail.com",
+            "phone": "89509125814",
+            "password": "pbkdf2:sha256:600000$cok8oL9mrNQoa3fU$ad28d51186f9238ecd222e36d18a247197fc5961fe9661717cca0ecd65510132",
+            "role": "user",
+            "created_at": "2025-06-03 16:48:07"
+        }
+    ]
+}

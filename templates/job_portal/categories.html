@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Категории вакансий - Портал вакансий{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1 class="mb-3">Категории вакансий</h1>
+            <p class="lead text-muted">Выберите интересующую вас категорию, чтобы найти подходящие вакансии</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        {% for category in categories %}
+        <div class="col-md-6 col-lg-4">
+            <a href="{{ url_for('job_portal.category', category_slug=category.name) }}" class="text-decoration-none">
+                <div class="card category-card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="card-title mb-0">{{ category.name }}</h5>
+                            <span class="badge bg-primary rounded-pill">{{ category.count }}</span>
+                        </div>
+                        <p class="card-text text-muted">
+                            {% if category.name == 'IT' %}
+                            <i class="fas fa-laptop-code me-2"></i>Разработка, тестирование, администрирование
+                            {% elif category.name == 'Продажи' %}
+                            <i class="fas fa-chart-line me-2"></i>Менеджеры по продажам, торговые представители
+                            {% elif category.name == 'Финансы' %}
+                            <i class="fas fa-calculator me-2"></i>Бухгалтеры, финансисты, аналитики
+                            {% elif category.name == 'HR' %}
+                            <i class="fas fa-users me-2"></i>Рекрутеры, HR-менеджеры, специалисты по персоналу
+                            {% else %}
+                            <i class="fas fa-briefcase me-2"></i>Вакансии в категории {{ category.name }}
+                            {% endif %}
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-primary">Смотреть вакансии</span>
+                            <i class="fas fa-chevron-right text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Популярные запросы -->
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 class="h4 mb-4">Популярные запросы</h2>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="{{ url_for('job_portal.search', query='Python') }}" class="btn btn-outline-primary">
+                    Python Developer
+                </a>
+                <a href="{{ url_for('job_portal.search', query='Frontend') }}" class="btn btn-outline-primary">
+                    Frontend Developer
+                </a>
+                <a href="{{ url_for('job_portal.search', query='Sales') }}" class="btn btn-outline-primary">
+                    Sales Manager
+                </a>
+                <a href="{{ url_for('job_portal.search', query='HR') }}" class="btn btn-outline-primary">
+                    HR Manager
+                </a>
+                <a href="{{ url_for('job_portal.search', query='Accountant') }}" class="btn btn-outline-primary">
+                    Accountant
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

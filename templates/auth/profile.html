@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Профиль - Job Portal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Профиль пользователя</h4>
+                <a href="{{ url_for('auth.edit_profile') }}" class="btn btn-primary">Редактировать</a>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <strong>Имя:</strong>
+                    </div>
+                    <div class="col-md-8">
+                        {{ user.name }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <strong>Email:</strong>
+                    </div>
+                    <div class="col-md-8">
+                        {{ user.email }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <strong>Телефон:</strong>
+                    </div>
+                    <div class="col-md-8">
+                        {{ user.phone }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <strong>Дата регистрации:</strong>
+                    </div>
+                    <div class="col-md-8">
+                        {{ user.created_at }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

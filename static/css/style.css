@@ -1,0 +1,305 @@
+/* Общие стили для портала вакансий */
+:root {
+    --primary-color: #dc3545; /* Красный цвет */
+    --primary-dark: #b02a37; /* Темно-красный для ховера */
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #ffffff; /* Белый цвет */
+    --dark-color: #212529;
+    --background-color: #ffffff; /* Белый фон */
+    --text-color: #333333;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Стили для карточек вакансий */
+.vacancy-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    overflow: hidden;
+    background-color: var(--light-color);
+}
+
+.vacancy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.1) !important; /* Красная тень */
+}
+
+.vacancy-card .badge {
+    font-weight: 500;
+}
+
+/* Стили для поисковой формы */
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Красная обводка */
+    border-color: #e17581; /* Светло-красный цвет бордера */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Изменяем цвета навигационной панели */
+.navbar-dark.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Стили для избранных вакансий */
+.bookmark-icon {
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.bookmark-icon:hover {
+    color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Стили для лого */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 12px;
+    object-fit: contain;
+}
+
+.navbar-brand span {
+    color: white;
+    font-weight: 500;
+}
+
+/* Стили для подвала (footer) */
+footer {
+    margin-top: auto;
+    background-color: #f8f9fa;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+footer .social-icons a {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+footer .social-icons a:hover {
+    color: var(--primary-dark);
+}
+
+/* Стили для страницы деталей вакансии */
+.sticky-top {
+    top: 20px;
+    z-index: 100;
+}
+
+.list-group-item.bg-transparent {
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.list-group-item.bg-transparent:first-child {
+    border-top: none;
+}
+
+.list-group-item.bg-transparent:last-child {
+    border-bottom: none;
+}
+
+/* Стили для форм */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.form-text {
+    font-size: 0.8rem;
+}
+
+/* Стили для модальных окон */
+.modal-header, .modal-footer {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивные стили */
+@media (max-width: 767.98px) {
+    .d-flex.mb-4 {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .sticky-top {
+        position: relative;
+        top: 0;
+    }
+    
+    .navbar-brand img {
+        height: 32px;
+    }
+    
+    .footer-logo {
+        height: 50px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.alert {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Стили для пагинации */
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.pagination .page-link {
+    color: var(--primary-color);
+}
+
+.pagination .page-link:hover {
+    color: var(--primary-dark);
+    background-color: #e9ecef;
+}
+
+/* Стили для категорий */
+.category-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--light-color);
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.1) !important; /* Красная тень */
+}
+
+/* Стили для статусов заявок */
+.status-badge {
+    border-radius: 20px;
+    padding: 0.35em 0.65em;
+    font-size: 0.85em;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+/* Стили для блока советов */
+.tip-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: var(--primary-color); /* Меняем на красный */
+}
+
+.tip-container {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Улучшенные стили для навигации */
+.nav-item .nav-link {
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-item .nav-link.active {
+    background-color: transparent;
+    position: relative;
+}
+
+.nav-item .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px 2px 0 0;
+}
+
+/* Изменяем цвета кнопок */
+.btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-light:hover {
+    color: var(--primary-color);
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/* Адаптивные стили для таблиц */
+@media (max-width: 767.98px) {
+    .table-responsive {
+        border: none;
+    }
+}
+
+/* Удаляем временные стили для отсутствующего лого */
+.navbar-brand:not(:has(img[src*="logo"])) {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand:not(:has(img[src*="logo"]))::before {
+    content: "";
+    display: none;
+}
+
+img.footer-logo[src*="logo"]:not([src*="data:"]):not([src^="http"]) {
+    display: block;
+}
+
+img.footer-logo:not([src*="data:"]):not([src^="http"]) + h5::before {
+    content: "";
+    display: none;
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 15px;
+    object-fit: contain;
+} 

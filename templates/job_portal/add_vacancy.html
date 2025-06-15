@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить вакансию - Портал вакансий{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1 class="mb-3">Добавить вакансию</h1>
+            <p class="lead text-muted">Заполните форму, чтобы опубликовать вакансию на портале</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ url_for('job_portal.add_vacancy') }}" method="post">
+                        <!-- Основная информация -->
+                        <div class="mb-4">
+                            <h3 class="h5 mb-3">Основная информация</h3>
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Название вакансии *</label>
+                                <input type="text" class="form-control" id="title" name="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Название компании *</label>
+                                <input type="text" class="form-control" id="company" name="company" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="location" class="form-label">Местоположение *</label>
+                                <input type="text" class="form-control" id="location" name="location" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Категория *</label>
+                                <select class="form-select" id="category" name="category" required>
+                                    <option value="">Выберите категорию</option>
+                                    <option value="IT">IT</option>
+                                    <option value="Продажи">Продажи</option>
+                                    <option value="Финансы">Финансы</option>
+                                    <option value="HR">HR</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Описание и требования -->
+                        <div class="mb-4">
+                            <h3 class="h5 mb-3">Описание и требования</h3>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Описание вакансии *</label>
+                                <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="requirements" class="form-label">Требования *</label>
+                                <textarea class="form-control" id="requirements" name="requirements" rows="4" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="responsibilities" class="form-label">Обязанности *</label>
+                                <textarea class="form-control" id="responsibilities" name="responsibilities" rows="4" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="conditions" class="form-label">Условия работы *</label>
+                                <textarea class="form-control" id="conditions" name="conditions" rows="4" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Детали вакансии -->
+                        <div class="mb-4">
+                            <h3 class="h5 mb-3">Детали вакансии</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="salary_min" class="form-label">Зарплата от *</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="salary_min" name="salary_min" required>
+                                        <span class="input-group-text">₽</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="salary_max" class="form-label">Зарплата до *</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="salary_max" name="salary_max" required>
+                                        <span class="input-group-text">₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="experience" class="form-label">Опыт работы *</label>
+                                    <select class="form-select" id="experience" name="experience" required>
+                                        <option value="">Выберите опыт</option>
+                                        <option value="Без опыта">Без опыта</option>
+                                        <option value="От 1 года">От 1 года</option>
+                                        <option value="От 2 лет">От 2 лет</option>
+                                        <option value="От 3 лет">От 3 лет</option>
+                                        <option value="От 5 лет">От 5 лет</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="employment_type" class="form-label">Тип занятости *</label>
+                                    <select class="form-select" id="employment_type" name="employment_type" required>
+                                        <option value="">Выберите тип</option>
+                                        <option value="Полная занятость">Полная занятость</option>
+                                        <option value="Частичная занятость">Частичная занятость</option>
+                                        <option value="Удаленная работа">Удаленная работа</option>
+                                        <option value="Проектная работа">Проектная работа</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="schedule" class="form-label">График работы *</label>
+                                <select class="form-select" id="schedule" name="schedule" required>
+                                    <option value="">Выберите график</option>
+                                    <option value="Полный день">Полный день</option>
+                                    <option value="Гибкий график">Гибкий график</option>
+                                    <option value="Удаленная работа">Удаленная работа</option>
+                                    <option value="Сменный график">Сменный график</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="keywords" class="form-label">Ключевые навыки *</label>
+                                <input type="text" class="form-control" id="keywords" name="keywords" 
+                                       placeholder="Например: Python, Django, SQL" required>
+                                <div class="form-text">Введите навыки через запятую</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ url_for('job_portal.index') }}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Назад
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Опубликовать вакансию
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Боковая панель с подсказками -->
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="h5 mb-3">Советы по заполнению</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Укажите точное название должности
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Опишите основные обязанности
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Укажите конкретные требования
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Опишите условия работы
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Добавьте ключевые навыки
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="h5 mb-3">Почему стоит публиковать у нас?</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-users text-primary me-2"></i>
+                            Большая база соискателей
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-chart-line text-primary me-2"></i>
+                            Высокая конверсия
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-bullseye text-primary me-2"></i>
+                            Точный таргетинг
+                        </li>
+                        <li>
+                            <i class="fas fa-star text-primary me-2"></i>
+                            Качественные отклики
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

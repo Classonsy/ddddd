@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Сохраненные вакансии - Портал вакансий{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1 class="mb-3">Сохраненные вакансии</h1>
+            <p class="lead text-muted">Ваши сохраненные вакансии для удобного доступа</p>
+        </div>
+    </div>
+
+    {% if saved_vacancies %}
+    <div class="row g-4">
+        {% for vacancy in saved_vacancies %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card vacancy-card h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h5 class="card-title mb-0">{{ vacancy.title }}</h5>
+                        <form action="{{ url_for('job_portal.unsave_vacancy', vacancy_id=vacancy.id) }}" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-outline-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ vacancy.company }}</h6>
+                    <p class="card-text">
+                        <i class="fas fa-map-marker-alt me-2"></i>{{ vacancy.location }}
+                    </p>
+                    <p class="card-text">
+                        <i class="fas fa-money-bill-wave me-2"></i>
+                        {{ vacancy.salary.min }} - {{ vacancy.salary.max }} ₽
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        {% for keyword in vacancy.keywords[:3] %}
+                        <span class="badge bg-light text-dark">{{ keyword }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">
+                            <i class="far fa-clock me-1"></i>{{ vacancy.posted_date }}
+                        </small>
+                        <div class="btn-group">
+                            <a href="{{ url_for('job_portal.vacancy', vacancy_id=vacancy.id) }}" class="btn btn-outline-primary btn-sm">
+                                Подробнее
+                            </a>
+                            <a href="{{ url_for('job_portal.apply', vacancy_id=vacancy.id) }}" class="btn btn-primary btn-sm">
+                                Откликнуться
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="alert alert-info">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-info-circle fa-2x me-3"></i>
+            <div>
+                <h5 class="alert-heading">У вас пока нет сохраненных вакансий</h5>
+                <p class="mb-0">Сохраняйте интересные вакансии, чтобы вернуться к ним позже.</p>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="{{ url_for('job_portal.index') }}" class="btn btn-primary">
+            <i class="fas fa-search me-2"></i>Найти вакансии
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 

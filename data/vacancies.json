@@ -1,0 +1,104 @@
+{
+    "vacancies": [
+        {
+            "id": 0,
+            "title": "Python Developer",
+            "company": "Tech Solutions",
+            "location": "Москва",
+            "description": "Мы ищем опытного Python-разработчика для работы над интересными проектами.",
+            "requirements": "Опыт работы с Python от 2 лет, знание Django/Flask, опыт работы с базами данных",
+            "responsibilities": "Разработка и поддержка веб-приложений, оптимизация производительности",
+            "conditions": "Удаленная работа, гибкий график, медицинская страховка",
+            "keywords": ["Python", "Django", "Flask", "SQL", "Git"],
+            "salary": {
+                "min": 150000,
+                "max": 250000
+            },
+            "experience": "От 2 лет",
+            "employment_type": "Полная занятость",
+            "schedule": "Удаленная работа",
+            "category": "IT",
+            "posted_date": "2024-03-15"
+        },
+        {
+            "id": 1,
+            "title": "Frontend Developer",
+            "company": "Web Studio",
+            "location": "Санкт-Петербург",
+            "description": "Требуется Frontend-разработчик для создания современных веб-интерфейсов.",
+            "requirements": "Опыт работы с JavaScript, React, HTML/CSS, знание современных фреймворков",
+            "responsibilities": "Разработка пользовательских интерфейсов, оптимизация производительности",
+            "conditions": "Офис в центре города, корпоративное обучение, ДМС",
+            "keywords": ["JavaScript", "React", "HTML", "CSS", "TypeScript"],
+            "salary": {
+                "min": 120000,
+                "max": 200000
+            },
+            "experience": "От 1 года",
+            "employment_type": "Полная занятость",
+            "schedule": "Полный день",
+            "category": "IT",
+            "posted_date": "2024-03-14"
+        },
+        {
+            "id": 2,
+            "title": "Sales Manager",
+            "company": "Business Solutions",
+            "location": "Москва",
+            "description": "Ищем активного менеджера по продажам для развития бизнеса.",
+            "requirements": "Опыт в продажах от 1 года, навыки ведения переговоров",
+            "responsibilities": "Поиск и привлечение клиентов, ведение переговоров, заключение сделок",
+            "conditions": "Высокий оклад + процент от продаж, корпоративный транспорт",
+            "keywords": ["Продажи", "Переговоры", "B2B", "Клиенты"],
+            "salary": {
+                "min": 80000,
+                "max": 150000
+            },
+            "experience": "От 1 года",
+            "employment_type": "Полная занятость",
+            "schedule": "Полный день",
+            "category": "Продажи",
+            "posted_date": "2024-03-13"
+        },
+        {
+            "id": 3,
+            "title": "Accountant",
+            "company": "Finance Group",
+            "location": "Москва",
+            "description": "Требуется бухгалтер для работы с крупными клиентами.",
+            "requirements": "Высшее образование, опыт работы от 3 лет, знание 1С",
+            "responsibilities": "Ведение бухгалтерского учета, составление отчетности",
+            "conditions": "Стабильная компания, полный соцпакет, премии",
+            "keywords": ["Бухгалтерия", "1С", "Отчетность", "Налоги"],
+            "salary": {
+                "min": 100000,
+                "max": 150000
+            },
+            "experience": "От 3 лет",
+            "employment_type": "Полная занятость",
+            "schedule": "Полный день",
+            "category": "Финансы",
+            "posted_date": "2024-03-12"
+        },
+        {
+            "id": 4,
+            "title": "HR Manager",
+            "company": "HR Solutions",
+            "location": "Москва",
+            "description": "Ищем HR-менеджера для работы с персоналом IT-компании.",
+            "requirements": "Опыт работы в HR от 2 лет, знание трудового законодательства",
+            "responsibilities": "Подбор персонала, адаптация сотрудников, HR-администрирование",
+            "conditions": "Молодой коллектив, возможность роста, обучение",
+            "keywords": ["HR", "Подбор персонала", "Адаптация", "IT"],
+            "salary": {
+                "min": 90000,
+                "max": 140000
+            },
+            "experience": "От 2 лет",
+            "employment_type": "Полная занятость",
+            "schedule": "Полный день",
+            "category": "HR",
+            "posted_date": "2024-03-11"
+        }
+    ]
+} 
